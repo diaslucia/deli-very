@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, Button, TouchableNativeFeedback, Platform, TouchableOpacity } from "react-native";
+import { View, Text, TouchableNativeFeedback, Platform, TouchableOpacity, ImageBackground  } from "react-native";
 import styles from "./styles";
 
 const CategoryGrid = ({ item, onSelected }) => {
@@ -10,11 +10,14 @@ const CategoryGrid = ({ item, onSelected }) => {
 
     return(
         <View style={styles.container}>
-            <TouchableComponent
-                styles={{...styles.touchable, ...{backgroundColor: item.color} }}
-                onPress={ () => onSelected(item)}
-            >
-                <Text style={styles.title}>{item.title}</Text>
+            <TouchableComponent onPress={() => onSelected(item)}>
+                <View style={styles.containerText}>
+                    <ImageBackground source={{ uri: item.img }} resizeMode="cover" style={styles.image}>
+                        <View style={styles.blackImg}>
+                            <Text style={styles.title}>{item.name}</Text> 
+                        </View>
+                    </ImageBackground>
+                </View>
             </TouchableComponent>
         </View>
     );
