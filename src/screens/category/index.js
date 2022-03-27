@@ -8,9 +8,9 @@ const Home = ({ navigation }) => {
             <Text style={styles.title}>Categorías</Text>
             <View style={styles.buttonContainer}>
                 <Button
-                title="Producto"
-                color="#045658"
-                onPress={() => { navigation.navigate("Product")}}/>
+                    title="Producto"
+                    color="#045658"
+                    onPress={() => { navigation.navigate("Product", { title: "PRODUCTO" }) }}/>
             </View>
         </View>
     );

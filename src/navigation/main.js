@@ -1,4 +1,5 @@
 import React from "react";
+import { Platform } from "react-native";
 import { Button, Image } from "react-native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
@@ -25,7 +26,7 @@ const MainNavigator = () => {
         <Stack.Navigator initialRouteName="Home"
         screenOptions={{
             headerStyle: {
-            backgroundColor: colors.primary,
+            backgroundColor: Platform.OS === "android" ? colors.primary : colors.primary,
             },
             headerTintColor: colors.secondaryText,
             headerTitleStyle: {
@@ -44,21 +45,21 @@ const MainNavigator = () => {
                 headerTitle: (props) => <LogoTitle {...props} />,
                 headerRight: () => (
                     <Button
-                    onPress={() => alert('Iniciar sesión')}
-                    title="Log In"
-                    color="#e0480b"
+                        onPress={() => alert('Iniciar sesión')}
+                        title="Log In"
+                        color="#e0480b"
                     />
                 ),
                 headerTitleAlign: "left",
             }}
             />
             <Stack.Screen name="Category"
-            component={Category}
-            options={{ title: "CATEGORÍA" }}
+                component={Category}
+                options={({ route }) => ({title: route.params.title})}
             />
             <Stack.Screen name="Product"
-            component={Product}
-            options={{ title: "PRODUCTO" }}
+                component={Product}
+                options={({ route }) => ({title: route.params.title})}
             />
         </Stack.Navigator>
     ); 
