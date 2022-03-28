@@ -8,7 +8,7 @@ import CategoryGrid from "../../components/molecules/categoryGrid/index";
 const Home = ({ navigation }) => {
 
     const handleSelectCategory = (category) => {
-        navigation.navigate("Category", { id: category.id, title: "CATEGORÍA"})
+        navigation.navigate("Category", { id: category.id, name: "CATEGORÍA"})
     }
 
     const renderItem = ({ item }) => <CategoryGrid item={item} onSelected={handleSelectCategory}/>

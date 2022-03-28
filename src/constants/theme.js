@@ -1,11 +1,11 @@
 export const colors = {
     primary: "#e0480b",
-    secondary: "#fff",
+    secondary: "#f7f7f7",
     primaryTitle: "#e0480b",
     secondaryTitle: "#045658",
     primaryText: "#03161d",
-    secondaryText: "#fff",
-    primaryBackground: "#fff",
+    secondaryText: "#f7f7f7",
+    primaryBackground: "#f7f7f7",
     secondaryBackground: "#045658",
     accent: "#fdac07"
 }
