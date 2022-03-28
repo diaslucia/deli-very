@@ -7,7 +7,8 @@ export const colors = {
     secondaryText: "#f7f7f7",
     primaryBackground: "#f7f7f7",
     secondaryBackground: "#045658",
-    accent: "#fdac07"
+    accent: "#fdac07",
+    button: "#045658",
 }
 
 export const fontSize = {
