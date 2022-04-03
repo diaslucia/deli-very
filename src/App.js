@@ -1,6 +1,7 @@
 import React from "react";
-import { View } from "react-native";
 import { useFonts } from "expo-font";
+import { Provider } from "react-redux";
+import store from "./store/index";
 
 import styles from "./styles";
 
@@ -17,9 +18,9 @@ const App = () => {
   }
 
   return (
-    <View style={styles.container}>
+    <Provider store={store} style={styles.container}>
       <AppNavigation/>
-    </View>
+    </Provider>
   );
 }
 

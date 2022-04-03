@@ -1,14 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { FlatList, View } from "react-native";
 import styles from "./styles";
 
-import { CATEGORIES } from "../../constants/categories";
+import { useSelector, connect, useDispatch } from "react-redux";
+import { selectedCategory } from "../../store/actions/categoryAction";
+
 import CategoryGrid from "../../components/molecules/categoryGrid/index";
 
 const Home = ({ navigation }) => {
-
+    const dispatch = useDispatch();
+    const categories = useSelector(state => state.categories.categories);
+    
     const handleSelectCategory = (category) => {
-        navigation.navigate("Category", { id: category.id, name: "CATEGORÍA"})
+        dispatch(selectedCategory(category.id));
+        navigation.navigate("Category", { name: "CATEGORÍA" })
     }
 
     const renderItem = ({ item }) => <CategoryGrid item={item} onSelected={handleSelectCategory}/>
@@ -16,7 +21,7 @@ const Home = ({ navigation }) => {
     return(
         <View style={styles.container}>
             <FlatList
-                data={CATEGORIES}
+                data={categories}
                 keyExtractor={item => item.id}
                 renderItem={renderItem}
             />
@@ -24,4 +29,4 @@ const Home = ({ navigation }) => {
     );
 }
 
-export default Home;
+export default connect()(Home);

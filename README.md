@@ -51,6 +51,10 @@ $expo install react-native-screens react-native-safe-area-context
 ```
 $npm install @react-navigation/native-stack
 ```
+10. Install React Redux
+```
+$npm install redux react-redux
+```
 10. Ejecute the app (Ctrl + C to stop server)
 ```
 $npm start

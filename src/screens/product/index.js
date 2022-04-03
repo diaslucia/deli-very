@@ -1,12 +1,15 @@
 import React from "react";
 import { View, Text, Button, Image } from "react-native";
 import styles from "./styles";
+import { useSelector, connect } from "react-redux";
 
 import { colors } from "../../constants/theme";
 
 const Product = ({ route }) => {
-    const { product } = route.params;
+    const product = useSelector(state => state.products.selectedProduct);
+
     const { name, description, price, img } = product;
+
     return (
         <View style={styles.container}>
             <View>
