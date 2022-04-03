@@ -1,7 +1,5 @@
 import { CATEGORIES } from "../../constants/categories";
-import categoryTypes from "../types/categoryTypes";
-
-const { SELECT_CATEGORY } = categoryTypes;
+import { SELECT_CATEGORY } from "../actions/categoryAction";
 
 const initialState = {
     categories: CATEGORIES,

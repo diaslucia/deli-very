@@ -1,6 +1,5 @@
 import { PRODUCTS } from "../../constants/products";
-import { productTypes } from "../types/productTypes";
-const { SELECT_PRODUCT, FILTERED_PRODUCTS } = productTypes;
+import { SELECT_PRODUCT, FILTERED_PRODUCTS } from "../actions/productAction";
 
 const initialState = {
     products: PRODUCTS,

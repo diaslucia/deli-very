@@ -5,9 +5,8 @@ import { useSelector, connect } from "react-redux";
 
 import { colors } from "../../constants/theme";
 
-const Product = ({ route }) => {
+const Product = () => {
     const product = useSelector(state => state.products.selectedProduct);
-
     const { name, description, price, img } = product;
 
     return (
@@ -30,4 +29,4 @@ const Product = ({ route }) => {
     )
 }
 
-export default Product;
+export default connect()(Product);
