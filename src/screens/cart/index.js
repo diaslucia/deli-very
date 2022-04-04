@@ -1,7 +1,8 @@
 import React from "react";
 import styles from "./styles";
-import { View, Text, Flatlist} from "react-native";
+import { View, Text, Flatlist, Button } from "react-native";
 import { connect, useSelector, useDispatch } from "react-redux";
+import { confirmCart, removeItem } from "../../store/actions/cartAction";
 
 import CartItem from "../../components/molecules/cartItem/index";
 
@@ -12,12 +13,12 @@ const Cart = ({ navigation }) => {
 
     const handleDeleteItem = id => dispatch(removeItem(id));
 
-    const renderItem = ({ item }) => <CartItem item={item} onDelete={handleDeleteItem}/>
-
     const handleConfirmCart = () => {
         dispatch(confirmCart(items, total));
     }
 
+    const renderItem = ({ item }) => <CartItem item={item} onDelete={handleDeleteItem}/>
+    
     return(
         <View style={styles.container}>
             <View style={styles.list}>
@@ -28,7 +29,7 @@ const Cart = ({ navigation }) => {
                 />
             </View>
             <View style={styles.footer}>
-                <Button title="Confirmar" onPress={() => handleConfirm()} color="red"/>
+                <Button title="Confirmar" onPress={() => handleConfirmCart()} color="red"/>
                 <Text style={styles.total}>Total</Text>
                 <Text style={styles.totalPrice}>${total}</Text>
             </View>
