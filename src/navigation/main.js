@@ -8,6 +8,7 @@ import { colors, fontFamily, fontSize } from "../constants/theme";
 import Home from "../screens/home/index";
 import Category from "../screens/category/index";
 import Product from "../screens/product/index";
+import Cart from "../screens/cart/index";
 
 const Stack = createNativeStackNavigator();
 
@@ -23,7 +24,7 @@ function LogoTitle() {
 
 const MainNavigator = () => {
     return(
-        <Stack.Navigator initialRouteName="Home"
+        <Stack.Navigator initialRouteName="Cart"
         screenOptions={{
             headerStyle: {
             backgroundColor: Platform.OS === "android" ? colors.primary : colors.primary,
@@ -55,12 +56,11 @@ const MainNavigator = () => {
             />
             <Stack.Screen name="Category"
                 component={Category}
-                options={({ route }) => ({title: route.params.name})}
             />
             <Stack.Screen name="Product"
                 component={Product}
-                options={({ route }) => ({title: route.params.name})}
             />
+            <Stack.Screen name="Cart" component={Cart}/>
         </Stack.Navigator>
     ); 
 }

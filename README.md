@@ -55,6 +55,10 @@ $npm install @react-navigation/native-stack
 ```
 $npm install redux react-redux
 ```
+10. Install Redux Thunk
+```
+$npm i redux-thunk
+```
 10. Ejecute the app (Ctrl + C to stop server)
 ```
 $npm start

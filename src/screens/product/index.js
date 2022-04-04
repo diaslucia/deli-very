@@ -1,13 +1,17 @@
 import React from "react";
 import { View, Text, Button, Image } from "react-native";
 import styles from "./styles";
-import { useSelector, connect } from "react-redux";
+import { useSelector, connect, useDispatch } from "react-redux";
+import { addItem } from "../../store/actions/cartAction";
 
 import { colors } from "../../constants/theme";
 
-const Product = () => {
+const Product = ({ navigation, route }) => {
+    const dispatch = useDispatch();
     const product = useSelector(state => state.products.selectedProduct);
     const { name, description, price, img } = product;
+
+    const handleAddToCart = () => dispatch(addItem(product));
 
     return (
         <View style={styles.container}>
@@ -23,7 +27,10 @@ const Product = () => {
                 <Text style={styles.text}>{description}</Text>
             </View>
             <View style={styles.containerButton}>
-                <Button title="Comprar" onPress={() => null} color={colors.button}/>
+                <Button title="Comprar" onPress={() => handleAddToCart()} color={colors.button}/>
+            </View>
+            <View style={styles.cartButton}>
+                <Button title="Cart" onPress={() => navigation.navigate("Cart")} color='#212121'/>
             </View>
         </View>
     )
