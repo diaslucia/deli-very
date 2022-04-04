@@ -14,16 +14,21 @@ const Cart = ({ navigation }) => {
 
     const renderItem = ({ item }) => <CartItem item={item} onDelete={handleDeleteItem}/>
 
+    const handleConfirmCart = () => {
+        dispatch(confirmCart(items, total));
+    }
+
     return(
         <View style={styles.container}>
             <View style={styles.list}>
                 <Flatlist
-                data={items}
-                keyExtractor={item => item.id.toString()}
-                renderItem={renderItem}
+                    data={items}
+                    keyExtractor={item => item.id.toString()}
+                    renderItem={renderItem}
                 />
             </View>
             <View style={styles.footer}>
+                <Button title="Confirmar" onPress={() => handleConfirm()} color="red"/>
                 <Text style={styles.total}>Total</Text>
                 <Text style={styles.totalPrice}>${total}</Text>
             </View>
