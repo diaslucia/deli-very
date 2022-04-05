@@ -12,9 +12,7 @@ const AuthNavigator = () => {
             headerShown: false,
         }}
         >
-            
             <Stack.Screen name="Auth" component={Auth} />
-
         </Stack.Navigator>
     );
 }

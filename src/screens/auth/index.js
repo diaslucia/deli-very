@@ -1,69 +1,42 @@
-import React, { useState , useReducer } from "react";
-import { View, Text, KeyboardAvoidingView, Button } from "react-native";
+import React, { useRef, useState } from "react";
+import { View, Text, KeyboardAvoidingView, TouchableOpacity, Button } from "react-native";
 import styles from "./styles";
 import { useDispatch } from "react-redux";
-
+import { signin, signup } from "../../store/actions/authAction";
 import Input from "../../components/atoms/input/index";
 
-import * as authAction from "../../store/actions/authAction";
-
-const FORM_INPUT_UPDATE = "FORM_INPUT_UPDATE";
-
-const formReducer = (state, action) => {
-    if(action.type === FORM_INPUT_UPDATE) {
-        const updatedValues = {
-            ...state.inputValues,
-            [action.input]: action.value
-        };
-        const updatedValidities = {
-            ...state.inputValidities,
-            [action.input]: action.isValid
-        };
-        let updatedFormIsValid = true;
-        for(const key in updatedValidities) {
-            updatedFormIsValid = updatedFormIsValid && updatedValidities[key];
-        }
-        return {
-            formIsValid: updatedFormIsValid,
-            inputValidities: updatedValidities,
-            inputValues: updatedValues
-        };
-    }
-    return state;
-};
-
 const Auth = ({ navigation }) => {
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [isNotValid, setIsNotValid] = useState(true);
+    const [isLogin, setIsLogin] = useState(true);
+    const emailInputRef = useRef();
+    const passwordInputRef = useRef();
     const dispatch = useDispatch();
 
-    const [formState, dispatchFormState] = useReducer(formReducer, {
-        inputValues: {
-            email: "",
-            password: ""
-        },
-        inputValidities: {
-            email: false,
-            password: false
-        },
-        formIsValid: false
-    })
+    const onChangeInput = (value, type) => {
+        if(type === 'email') {
+            setEmail(value);
+        }
+        if(type === 'password') {
+            setPassword(value);
+        }
 
-    const [isLogin, setIsLogin] = useState(true);
-
-    const onHandlerLogIn = () => console.log("hola");
-
-    const onHandlerSignUp = () => {
-        dispatch(authActions.signUp(formState.inputValues.email, formState.inputValues.password));
+        if(emailInputRef.current.state.validate && passwordInputRef.current.state.validate) {
+            setIsNotValid(false);
+        } else {
+            setIsNotValid(true);
+        }
     }
 
-    const onInputChangeHandler = useCallback((inputIdentifier, inputValue, inputValidity) => {
-        dispatchFormState({
-            type: FORM_INPUT_UPDATE,
-            value: inputValue,
-            isValid: inputValidity,
-            input: inputIdentifier
-        });
-    }, [dispatchFormState]);
-
+    const handleAuth = () => {
+        if(isLogin) {
+            dispatch(signin(email, password));
+        } else {
+            dispatch(signup(email, password));
+        }
+    }
+    
     return (
         <KeyboardAvoidingView
             style={styles.container}
@@ -71,47 +44,43 @@ const Auth = ({ navigation }) => {
             keyboardVerticalOffset={50}
             enabled
         >
-            <View style={styles.container}>
-                <Text style={styles.title}>{isLogin ? "LogIn" : "Registro"}</Text>
-                <View>
-                    <Input
-                        id="email"
-                        label="Email"
+            <View style={styles.containerCard}>
+                <Text style={styles.formTitle}>{isLogin ? 'Login' : 'Registro'}</Text>
+                <View style={styles.formContainer}>
+                    <Input 
+                        ref={emailInputRef}
+                        label='Email'
                         placeholder="Ingresa tu correo"
-                        placeholderTextColor="#999"
+                        placeholderTextColor="red"
                         keyboardType="email-address"
-                        required
-                        email
-                        minLength={6}
-                        secureTextEntry
+                        type='email'
                         autoCapitalize="none"
-                        errorMessage="Ingrese un email válido"
-                        onInputChange={() => {}}
-                        initialValue="" 
+                        autoCorrect={false}
+                        onChangeInput={(value) => onChangeInput(value, 'email')}
+                        value={email}
+                        maxLength={60}
                     />
-                    <Input
-                        id="password"
-                        label="Contraseña"
+                    <Input 
+                        ref={passwordInputRef}
+                        label='Contraseña'
                         placeholder="Ingresa tu contraseña"
-                        placeholderTextColor="#999"
-                        keyboardType="default"
-                        required
-                        email
-                        minLength={6}
-                        secureTextEntry
+                        placeholderTextColor="red"
+                        type='password'
                         autoCapitalize="none"
-                        errorMessage="Ingrese un email válido"
-                        onInputChange={() => {}}
-                        initialValue="" 
+                        autoCorrect={false}
+                        secureTextEntry
+                        onChangeInput={(value) => onChangeInput(value, 'password')}
+                        value={password}
+                        maxLength={20}
                     />
                 </View>
-                <View>
-                    <Button title="LogIn" onPress={onHandlerLogIn} color="red"/>
-                    <Button title="Registrarse" onPress={onHandlerSignUp} color="red"/>
-                </View>
+                <TouchableOpacity onPress={() => setIsLogin(!isLogin)}>
+                    <Text style={styles.linkText}>{isLogin ? '¿No tienes una cuenta? registrate' : '¿Ya tienes una cuenta? inicia sesión'}</Text>
+                </TouchableOpacity>
+                <Button title={ isLogin ? 'Ingresar' : 'Registrar'} onPress={() => handleAuth()} disabled={isNotValid} color="red" />
             </View>
-        </KeyboardAvoidingView>
-    )
+        </KeyboardAvoidingView>  
+    );
 }
 
 export default Auth;

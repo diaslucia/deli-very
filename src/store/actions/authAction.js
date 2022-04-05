@@ -1,27 +1,48 @@
-import { PanResponder } from "react-native-web";
-import { URL_AUTH } from "../../utils/database";
+import { URL_AUTH_SIGNIN, URL_AUTH_SIGNUP } from '../../utils/database';
 
-export const SIGNUP = "SIGNUP"
+export const SIGNUP = "SIGNUP";
+export const SIGNIN = "SIGNIN";
 
 export const signup = (email, password) => {
     return async dispatch => {
-        const response = await fetch (URL_AUTH, {
-            method: "POST",
+        try {
+        const response = await fetch(URL_AUTH_SIGNUP, {
+            method: 'POST',
             headers: {
-                "Content-Type": "application/json"
+                'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ 
-                email,
-                password,
-                returnSecureToken: true
-            })
-        })
+            body: JSON.stringify({ email, password, returnSecureToken: true })
+        });
 
-        if(!response.ok) {
-            throw new Error("No se ha podido registrar");
-        }
+        const result = await response.json();
 
-        const resData = await PanResponder.json()
-        dispatch({ type: SIGNUP})
+        dispatch({
+            type: SIGNUP,
+            token: result.idToken,
+            userId: result.localId
+        });
+    } catch (error) {
+        console.warn(error);
+    }
+    }
+}
+
+export const signin = (email, password) => {
+    return async dispatch => {
+        const response = await fetch(URL_AUTH_SIGNIN, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ email, password })
+    });
+
+        const result = await response.json();
+
+        dispatch({
+            type: SIGNIN,
+            token: result.idToken,
+            userId: result.localId
+        });
     }
 }
