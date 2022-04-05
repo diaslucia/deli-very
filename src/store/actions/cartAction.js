@@ -1,3 +1,4 @@
+import { URL_API } from "../../utils/database";
 export const ADD_ITEM = "ADD_ITEM";
 export const REMOVE_ITEM = "REMOVE_ITEM";
 export const CONFIRM_CART = "CONFIRM_CART";

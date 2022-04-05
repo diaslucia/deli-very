@@ -24,7 +24,7 @@ function LogoTitle() {
 
 const MainNavigator = () => {
     return(
-        <Stack.Navigator initialRouteName="Cart"
+        <Stack.Navigator initialRouteName="Home"
         screenOptions={{
             headerStyle: {
             backgroundColor: Platform.OS === "android" ? colors.primary : colors.primary,

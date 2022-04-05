@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./styles";
-import { View, Text, Flatlist, Button } from "react-native";
+import { View, Text, FlatList, Button } from "react-native";
 import { connect, useSelector, useDispatch } from "react-redux";
 import { confirmCart, removeItem } from "../../store/actions/cartAction";
 
@@ -22,9 +22,9 @@ const Cart = ({ navigation }) => {
     return(
         <View style={styles.container}>
             <View style={styles.list}>
-                <Flatlist
+                <FlatList
                     data={items}
-                    keyExtractor={item => item.id.toString()}
+                    keyExtractor={item => item.id}
                     renderItem={renderItem}
                 />
             </View>
