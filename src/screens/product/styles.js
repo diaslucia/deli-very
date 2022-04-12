@@ -40,12 +40,6 @@ const styles = StyleSheet.create({
         fontSize: fontSize.text,
         marginVertical: margin.small,
     },
-    containerButton:{
-        flex:1,
-        alignContent: "center",
-        justifyContent: "flex-end",
-        paddingVertical: padding.large,
-    },
 });
 
 export default styles;

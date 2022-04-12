@@ -74,10 +74,10 @@ const Auth = ({ navigation }) => {
                         maxLength={20}
                     />
                 </View>
+                <Button title={ isLogin ? 'Ingresar' : 'Registrar'} onPress={() => handleAuth()} disabled={isNotValid} color="red" />
                 <TouchableOpacity onPress={() => setIsLogin(!isLogin)}>
                     <Text style={styles.linkText}>{isLogin ? '¿No tienes una cuenta? registrate' : '¿Ya tienes una cuenta? inicia sesión'}</Text>
                 </TouchableOpacity>
-                <Button title={ isLogin ? 'Ingresar' : 'Registrar'} onPress={() => handleAuth()} disabled={isNotValid} color="red" />
             </View>
         </KeyboardAvoidingView>  
     );

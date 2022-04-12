@@ -64,3 +64,11 @@ $npm i redux-thunk
 $npm start
 ```
 11. Install Expo Go App in your cellphone and scan the QR to visualice your project
+
+Bottom Tabs
+
+npm install @react-navigation/bottom-tabs
+
+Iconos vector
+
+npm install --save react-native-vector-icons
