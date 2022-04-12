@@ -10,11 +10,12 @@ const Cart = ({ navigation }) => {
     const dispatch = useDispatch();
     const items = useSelector(state => state.cart.items);
     const total = useSelector(state => state.cart.total);
+    const user = useSelector(state => state.auth.userId);
 
     const handleDeleteItem = id => dispatch(removeItem(id));
 
     const handleConfirmCart = () => {
-        dispatch(confirmCart(items, total));
+        dispatch(confirmCart(items, total, user));
     }
 
     const renderItem = ({ item }) => <CartItem item={item} onDelete={handleDeleteItem}/>

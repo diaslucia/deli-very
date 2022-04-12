@@ -13,16 +13,16 @@ export const removeItem = (id) => ({
     id
 });
 
-export const confirmCart = (cart, total) => {
+export const confirmCart = (cart, total, user) => {
     return async dispatch => {
         try {
             
-            const response = await fetch(`${URL_API}/cart.json`, {
+            const response = await fetch(`${URL_API}/order.json`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({ date: Date.now(), items: cart, total })
+                body: JSON.stringify({ date: Date.now(), items: cart, total, user })
             });
 
             const result = await response.json();
