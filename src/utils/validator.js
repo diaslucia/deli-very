@@ -10,22 +10,22 @@ const validator = (type, value) => {
                 }
             }
             return {
-                error: 'formato de email no valido, ej: user@gmail.com',
+                error: "Ingrese un formato válido (Ej: user@gmail.com)",
                 value
             }
         case 'password':
             if(value.length >= minPasswordLength) {
                 return {
-                    error: ''
+                    error: ""
                 }
             }
             return {
-                error: `la contraseña debe tener al menos ${minPasswordLength} caracteres`,
+                error: `La contraseña debe tener al menos ${minPasswordLength} caracteres`,
                 value
             }
         default:
             return {
-                error: '',
+                error: "",
                 value
             }
     }

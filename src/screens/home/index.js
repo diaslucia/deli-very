@@ -1,11 +1,18 @@
 import React from "react";
 import { FlatList, View } from "react-native";
-import styles from "./styles";
 
+/* Styles */
+import styles from "./styles";
+import { colors } from "../../constants/theme";
+
+/* Redux */
 import { useSelector, connect, useDispatch } from "react-redux";
 import { selectedCategory } from "../../store/actions/categoryAction";
 
+/* Components */
 import CategoryGrid from "../../components/molecules/categoryGrid/index";
+
+import IonicIcons from "react-native-vector-icons/Ionicons";
 
 const Home = ({ navigation }) => {
     const dispatch = useDispatch();
@@ -17,6 +24,14 @@ const Home = ({ navigation }) => {
     }
 
     const renderItem = ({ item }) => <CategoryGrid item={item} onSelected={handleSelectCategory}/>
+
+    React.useLayoutEffect(() => {
+        navigation.setOptions({
+          headerRight: () => (
+            <IonicIcons name='person-circle-outline' size={35} color={colors.secondary} onPress={() => navigation.navigate("Order")}/>
+          ),
+        });
+    }, [navigation]);
 
     return(
         <View style={styles.container}>

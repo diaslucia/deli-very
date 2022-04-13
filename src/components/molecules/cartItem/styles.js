@@ -1,25 +1,35 @@
 import { StyleSheet } from "react-native";
+import { colors, margin, fontSize } from "../../../constants/theme";
 
-export const styles = StyleSheet.create({
+const styles = StyleSheet.create({
     container: {
         flex: 1,
     },
+    header: {
+        backgroundColor: colors.accent,
+        marginTop: margin.medium,
+    },
     name: {
-        fontSize: 20,
-        color: '#212121'
+        fontSize: fontSize.title,
+        color: colors.secondaryTitle,
+        marginHorizontal: margin.small,
     },
     details: {
         flex: 1,
         flexDirection: "row",
         flexWrap: "wrap",
-        alignItems: 'center',
-        justifyContent: 'space-between'
+        alignItems: "center",
+        justifyContent: "space-between",
+        marginHorizontal: margin.small,
+        marginTop: margin.small,
     },
     quantity: {
-        fontSize: 16,
+        fontSize: fontSize.text,
     },
     price: {
-        fontSize: 16,
-        color: '#212121'
+        fontSize: fontSize.text,
+        color: colors.primaryText,
     },
 });
+
+export default styles;

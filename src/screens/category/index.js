@@ -1,10 +1,14 @@
 import React, { useEffect } from "react";
 import { View, FlatList } from "react-native";
-import styles from "./styles";
-import { useSelector, connect, useDispatch } from "react-redux";
 
+/* Styles */
+import styles from "./styles";
+
+/* Redux */
+import { useSelector, connect, useDispatch } from "react-redux";
 import { filteredProducts, selectedProduct } from "../../store/actions/productAction";
 
+/* Components */
 import CategoryProduct from "../../components/molecules/categoryProduct/index";
 
 const Category = ({ navigation }) => {

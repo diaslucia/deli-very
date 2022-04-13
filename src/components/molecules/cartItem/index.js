@@ -1,6 +1,11 @@
 import React from "react";
-import { View, Text, Button } from "react-native";
-import { styles } from "./styles";
+import { View, Text, TouchableOpacity } from "react-native";
+
+/* Styles */
+import styles from "./styles";
+
+/* Icons */
+import IonicIcons from "react-native-vector-icons/Ionicons";
 
 const CartItem = ({ item, onDelete }) => {
     return (
@@ -10,14 +15,14 @@ const CartItem = ({ item, onDelete }) => {
             </View>
             <View style={styles.details}>
                 <View>
-                    <Text style={styles.quantity}>cantidad: {item.quantity}</Text>
+                    <Text style={styles.quantity}>Cantidad: {item.quantity}</Text>
                 </View>
                 <View>
                     <Text style={styles.price}>${item.price}</Text>
                 </View>
-                <View>
-                    <Button title="Borrar" onPress={() => onDelete(item.id)} color="red" />
-                </View>
+                <TouchableOpacity onPress={() => onDelete(item.id)}>
+                    <IonicIcons name="trash-outline" size={20} />
+                </TouchableOpacity>
             </View>
         </View>
     )

@@ -18,10 +18,7 @@ const orderReducer = (state = initialState, action) => {
                 orders: state.orders.filter(order => order.id !== action.orderId)
             }
         default:
-            return state;
+            return state
     }
 }
-
 export default orderReducer;
-
-

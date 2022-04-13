@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+import { colors, fontFamily, fontSize, margin } from "../../../constants/theme";
 
 const styles = StyleSheet.create({
     container: {
@@ -10,13 +11,17 @@ const styles = StyleSheet.create({
     },
     input : {
         borderBottomWidth: 1,
-        borderBottomColor: "red",
-        paddingVertical: 10,
+        fontFamily: fontFamily.main,
+        color: colors.primaryText,
+        borderBottomColor: colors.accent,
+        paddingVertical: margin.small,
+        marginVertical: margin.small
     },
     messageText: {
-        color: "red",
-        fontSize: 12,
-        marginVertical: 5,
+        color: colors.error,
+        fontSize: fontSize.error,
+        fontFamily: fontFamily.main,
+        marginVertical: margin.small,
     }
 });
 

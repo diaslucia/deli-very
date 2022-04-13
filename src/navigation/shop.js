@@ -9,6 +9,7 @@ import { colors, fontFamily, fontSize } from "../constants/theme";
 import Home from "../screens/home/index";
 import Category from "../screens/category/index";
 import Product from "../screens/product/index";
+import Order from "../screens/order/index";
 
 const Stack = createNativeStackNavigator();
 
@@ -44,15 +45,11 @@ const ShopNavigator = () => {
             component={Home}
             options={{ 
                 headerTitle: (props) => <LogoTitle {...props} />,
-                headerRight: () => (
-                    <Button
-                        onPress={() => alert('Iniciar sesión')}
-                        title="Log In"
-                        color="#e0480b"
-                    />
-                ),
                 headerTitleAlign: "left",
             }}
+            />
+            <Stack.Screen name="Order"
+                component={Order}
             />
             <Stack.Screen name="Category"
                 component={Category}

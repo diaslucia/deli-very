@@ -1,7 +1,10 @@
 import React, { Component } from "react";
 import { View, Text, TextInput } from "react-native";
+
+/* Styles */
 import styles from "./styles";
-import Label from "../label/index";
+
+/* Validator */
 import validator from "../../../utils/validator";
 
 export default class Input extends Component {
@@ -63,7 +66,6 @@ export default class Input extends Component {
             <View
                 pointerEvents={editable ? 'auto' : 'none'}
             >
-                <Label {...props} />
                 <TextInput
                     {...props}
                     ref={this.onRef}

@@ -1,8 +1,15 @@
 import React, { useRef, useState } from "react";
 import { View, Text, KeyboardAvoidingView, TouchableOpacity, Button } from "react-native";
+
+/* Styles */
 import styles from "./styles";
+import { colors } from "../../constants/theme";
+
+/* Redux */
 import { useDispatch } from "react-redux";
 import { signin, signup } from "../../store/actions/authAction";
+
+/* Components */
 import Input from "../../components/atoms/input/index";
 
 const Auth = ({ navigation }) => {
@@ -40,44 +47,49 @@ const Auth = ({ navigation }) => {
     return (
         <KeyboardAvoidingView
             style={styles.container}
-            behavior="padding"
-            keyboardVerticalOffset={50}
+            behavior="height"
             enabled
         >
             <View style={styles.containerCard}>
-                <Text style={styles.formTitle}>{isLogin ? 'Login' : 'Registro'}</Text>
+
+                <Text style={styles.formTitle}>{isLogin ? "Iniciar Sesión" : "Registrarse"}</Text>
+                
                 <View style={styles.formContainer}>
+
                     <Input 
                         ref={emailInputRef}
-                        label='Email'
                         placeholder="Ingresa tu correo"
-                        placeholderTextColor="red"
+                        placeholderTextColor= {colors.accent}
                         keyboardType="email-address"
-                        type='email'
+                        type="email"
                         autoCapitalize="none"
                         autoCorrect={false}
-                        onChangeInput={(value) => onChangeInput(value, 'email')}
+                        onChangeInput={(value) => onChangeInput(value, "email")}
                         value={email}
                         maxLength={60}
                     />
                     <Input 
                         ref={passwordInputRef}
-                        label='Contraseña'
                         placeholder="Ingresa tu contraseña"
-                        placeholderTextColor="red"
-                        type='password'
+                        placeholderTextColor= {colors.accent}
+                        type="password"
                         autoCapitalize="none"
                         autoCorrect={false}
                         secureTextEntry
-                        onChangeInput={(value) => onChangeInput(value, 'password')}
+                        onChangeInput={(value) => onChangeInput(value, "password")}
                         value={password}
                         maxLength={20}
                     />
                 </View>
-                <Button title={ isLogin ? 'Ingresar' : 'Registrar'} onPress={() => handleAuth()} disabled={isNotValid} color="red" />
+
+                <View style={styles.buttonContainer}>
+                    <Button title={ isLogin ? "Ingresar" : "Registrar"} onPress={() => handleAuth()} disabled={isNotValid} color={colors.button} />
+                </View>
+
                 <TouchableOpacity onPress={() => setIsLogin(!isLogin)}>
-                    <Text style={styles.linkText}>{isLogin ? '¿No tienes una cuenta? registrate' : '¿Ya tienes una cuenta? inicia sesión'}</Text>
+                    <Text style={styles.linkText}>{isLogin ? "¿No tenes una cuenta? Registrate" : "¿Ya tenes una cuenta? Inicia Sesión"}</Text>
                 </TouchableOpacity>
+
             </View>
         </KeyboardAvoidingView>  
     );

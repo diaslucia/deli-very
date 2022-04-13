@@ -23,10 +23,16 @@ const CartNavigator = () => {
             headerTitleStyle: {
                 fontSize: fontSize.medium,
                 fontFamily: fontFamily.main,
-            }
+            },
+           
         }}
         >
-            <Stack.Screen name="Cart" component={Cart}/>
+            <Stack.Screen
+            name="Cart"
+            component={Cart}
+            options={{ 
+                title: "Carrito"
+            }}/>
         </Stack.Navigator>
     ); 
 }

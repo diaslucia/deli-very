@@ -1,10 +1,13 @@
 import React from "react";
 import { View, Text, Button, Image } from "react-native";
+
+/* Styles */
 import styles from "./styles";
+import { colors } from "../../constants/theme";
+
+/* Redux */
 import { useSelector, connect, useDispatch } from "react-redux";
 import { addItem } from "../../store/actions/cartAction";
-
-import { colors } from "../../constants/theme";
 
 const Product = ({ navigation, route }) => {
     const dispatch = useDispatch();

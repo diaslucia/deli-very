@@ -1,11 +1,10 @@
 import { StyleSheet } from "react-native";
-import { colors, fontFamily, fontSize, margin } from "../../constants/theme";
+import { colors, fontFamily, fontSize, margin, padding } from "../../constants/theme";
 
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        marginHorizontal: 20,
-        marginTop: 20,
+        marginHorizontal: margin.medium,
     },
     list: {
         flex: 1,  
@@ -13,22 +12,22 @@ const styles = StyleSheet.create({
     footer: {
         flex: 1,
         flexGrow: 0.1,
-        borderTopColor: colors.primary,
+        borderTopColor: colors.third,
         borderTopWidth: 1,
         flexDirection: "row",
         alignItems: "center",
-        justifyContent: 'flex-start',
-        marginHorizontal: 20,
+        justifyContent: "space-between",
+        marginHorizontal: margin.medium,
     },
     total: {
-        fontSize: 18,
-        padding: 8,
-        color: '#212121'
+        fontSize: fontSize.text,
+        padding: padding.small,
+        color: colors.primaryText,
     },
     totalPrice: {
-        fontSize: 16,
-        padding: 8,
-        color: colors.primary,
+        fontSize: fontSize.text,
+        padding: padding.small,
+        color: colors.primaryText,
     },
 });
 
