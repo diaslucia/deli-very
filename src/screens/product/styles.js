@@ -40,6 +40,20 @@ const styles = StyleSheet.create({
         fontSize: fontSize.text,
         marginVertical: margin.small,
     },
+    button: {
+        alignItems: 'center',
+        justifyContent: 'center',
+        marginVertical: margin.large,
+        paddingVertical: padding.small,
+        elevation: 2,
+        backgroundColor: colors.button,
+    },
+    textButton:{
+        color: colors.secondaryText,
+        textTransform: "uppercase",
+        fontFamily: fontFamily.main,
+        fontSize: fontSize.text,
+    }
 });
 
 export default styles;

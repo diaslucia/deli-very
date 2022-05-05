@@ -24,6 +24,10 @@ const Cart = ({ navigation }) => {
         dispatch(confirmCart(items, total, user));
     }
 
+    const buy = () => {
+        navigation.navigate("Buy", items);
+    }
+
     const renderItem = ({ item }) => <CartItem item={item} onDelete={handleDeleteItem}/>
     
     return(
@@ -37,7 +41,7 @@ const Cart = ({ navigation }) => {
             </View>
             <View style={styles.footer}>
                 <Text style={styles.total}>Total: ${total}</Text>
-                <Button title="Confirmar" onPress={() => handleConfirmCart()} color={colors.button}/>
+                <Button title="Confirmar" onPress={() => buy()} color={colors.button}/>
             </View>
         </View>
     );

@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, Button, Image } from "react-native";
+import { View, Text, Button, Image, Pressable } from "react-native";
 
 /* Styles */
 import styles from "./styles";
@@ -29,8 +29,8 @@ const Product = ({ navigation, route }) => {
             <View style={styles.containerDescription}>
                 <Text style={styles.text}>{description}</Text>
             </View>
-            <View style={styles.containerButton}>
-                <Button title="Comprar" onPress={() => handleAddToCart()} color={colors.button}/>
+            <View>
+                <Pressable style={styles.button} onPress={() => handleAddToCart()}><Text style={styles.textButton}>Comprar</Text></Pressable>
             </View>
         </View>
     )

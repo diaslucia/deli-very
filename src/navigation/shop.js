@@ -10,6 +10,7 @@ import Home from "../screens/home/index";
 import Category from "../screens/category/index";
 import Product from "../screens/product/index";
 import Order from "../screens/order/index";
+import Buy from "../screens/buy/index";
 
 const Stack = createNativeStackNavigator();
 
@@ -49,13 +50,20 @@ const ShopNavigator = () => {
             }}
             />
             <Stack.Screen name="Order"
+            options={{ title: "Mis órdenes" }}
                 component={Order}
             />
             <Stack.Screen name="Category"
+            options={{ title: "Categorías" }}
                 component={Category}
             />
             <Stack.Screen name="Product"
+            options={{ title: "Detalle" }}
                 component={Product}
+            />
+            <Stack.Screen name="Buy"
+                options={{ title: "¡Último paso!" }}
+                component={Buy}
             />
         </Stack.Navigator>
     );
