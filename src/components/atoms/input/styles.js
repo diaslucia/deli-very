@@ -12,8 +12,8 @@ const styles = StyleSheet.create({
     input : {
         borderBottomWidth: 1,
         fontFamily: fontFamily.main,
-        color: colors.primaryText,
-        borderBottomColor: colors.accent,
+        color: colors.button,
+        borderBottomColor: colors.button,
         paddingVertical: margin.small,
         marginVertical: margin.small
     },

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, Text, Button, TextInput } from "react-native";
+import { View, Text, Button } from "react-native";
 
 /* Styles */
 import styles from "./styles";
@@ -24,6 +24,7 @@ const Buy = ({ route, navigation }) => {
     const handleConfirmCart = () => {
         const items = route.params;
         dispatch(confirmCart(items, total, user, location));
+        navigation.navigate("Thanks");
     }
 
     const handleOnLocation = location => {

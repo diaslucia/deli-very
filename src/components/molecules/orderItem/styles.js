@@ -6,13 +6,14 @@ const styles = StyleSheet.create({
         flex: 1,
     },
     header: {
-        backgroundColor: colors.accent,
         marginTop: margin.medium,
     },
     date: {
-        fontSize: fontSize.title,
+        fontSize: fontSize.text,
         color: colors.secondaryTitle,
         marginHorizontal: margin.small,
+        borderBottomWidth: 1,
+        borderBottomColor: colors.secondaryTitle,
     },
     details: {
         flex: 1,

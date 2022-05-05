@@ -4,12 +4,6 @@ import { colors, fontFamily, fontSize, margin, padding } from "../../constants/t
 const { width, height } = Dimensions.get('window');
 
 const styles = StyleSheet.create({
-    container: {
-        backgroundColor: colors.thirdBackground,
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-    },
     containerCard: {
         backgroundColor: colors.primaryBackground,
         padding: padding.large,
@@ -36,7 +30,13 @@ const styles = StyleSheet.create({
     },
     buttonContainer: {
         paddingVertical: padding.large,
-    }
+    },
+    image: {
+        flex: 1,
+        resizeMode: "repeat",
+        justifyContent: "center",
+        alignItems: "center",
+    },
 });
 
 export default styles;

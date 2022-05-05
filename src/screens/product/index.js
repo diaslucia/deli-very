@@ -1,9 +1,8 @@
 import React from "react";
-import { View, Text, Button, Image, Pressable } from "react-native";
+import { View, Text, Image, Pressable } from "react-native";
 
 /* Styles */
 import styles from "./styles";
-import { colors } from "../../constants/theme";
 
 /* Redux */
 import { useSelector, connect, useDispatch } from "react-redux";

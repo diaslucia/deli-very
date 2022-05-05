@@ -7,8 +7,8 @@ import styles from "./styles";
 /* Icons */
 import IonicIcons from "react-native-vector-icons/Ionicons";
 
-const OrderItem = ({ data, onDelete, onDetails }) => {
-    const { date, id, total } = data;
+const OrderItem = ({ data, onDelete }) => {
+    const { date, id, total, address } = data;
 
     const formatDate = (time) => {
         const date = new Date(time);
@@ -21,14 +21,10 @@ const OrderItem = ({ data, onDelete, onDetails }) => {
                 <Text style={styles.date}>{formatDate(date)}</Text>
             </View>
             <View style={styles.details}>
+                <Text>{address}</Text>
                 <Text style={styles.total}>Total: ${total}</Text>
 
                 <View style={styles.buttonsContainerDoble}>
-                    <View style={styles.buttonsContainer}>
-                        <TouchableOpacity onPress={() => onDetails(id)}>
-                            <IonicIcons name="list-outline" size={20} />
-                        </TouchableOpacity>
-                    </View>
                     <View style={styles.buttonsContainer}>
                         <TouchableOpacity onPress={() => onDelete(id)}>
                             <IonicIcons name="trash-outline" size={20} />

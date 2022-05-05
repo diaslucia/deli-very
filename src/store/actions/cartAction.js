@@ -33,7 +33,7 @@ export const confirmCart = (cart, total, user, location) => {
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({ date: Date.now(), items: cart, total, user, delivery: {address} })
+                body: JSON.stringify({ date: Date.now(), items: cart, total, user, address })
             });
 
             const result = await response.json();
