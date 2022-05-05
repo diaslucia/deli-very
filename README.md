@@ -55,20 +55,26 @@ $npm install @react-navigation/native-stack
 ```
 $npm install redux react-redux
 ```
-10. Install Redux Thunk
+11. Install Redux Thunk
 ```
 $npm i redux-thunk
 ```
-10. Ejecute the app (Ctrl + C to stop server)
+12. Install Bottom Tabs
+```
+$npm install @react-navigation/bottom-tabs
+```
+13. Iconos vector
+```
+$npm install --save react-native-vector-icons
+```
+14. Ejecute the app (Ctrl + C to stop server)
 ```
 $npm start
 ```
-11. Install Expo Go App in your cellphone and scan the QR to visualice your project
+15. Install Expo Go App in your cellphone and scan the QR to visualice your project
 
-Bottom Tabs
 
-npm install @react-navigation/bottom-tabs
 
-Iconos vector
 
-npm install --save react-native-vector-icons
+
+
