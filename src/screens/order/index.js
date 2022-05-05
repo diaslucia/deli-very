@@ -16,21 +16,14 @@ const Order = ({ navigation }) => {
     const dispatch = useDispatch();
     const [selectedImage, setSelectedImage] = useState();
     const userId = useSelector(state => state.auth.userId);
-    const user = useSelector(state => state.auth);
     const orders = useSelector(state => state.order.orders);
-    const address = orders[0].address;
 
-    console.warn(user);
     useEffect(() => {
         dispatch(getOrders(userId));
     }, []);
 
     const onDelete = (id) => {
         dispatch(removeOrder(id));
-    }
-
-    const onDetails = (id) => {
-        console.log(id);
     }
 
     const renderItem = ({ item }) => (
@@ -46,7 +39,7 @@ const Order = ({ navigation }) => {
 
     return(
         <View style={styles.container}>
-            <ImageSelector onImage={onHandlerImageTaken} address={address}/>
+            <ImageSelector onImage={onHandlerImageTaken} address={orders}/>
             <View style={styles.orderContainer}>
                 <Text style={styles.title}>Mis órdenes</Text>
             </View>

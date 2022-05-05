@@ -44,27 +44,17 @@ const ImageSelector = (props) => {
 
     return(
         <View style={styles.container}>
-            <View style={styles.containerImg}>
-                <View style={styles.preview}>
-                    {   !pickedUrl
-                        ?
-                        (<Pressable onPress={handlerTakeImage}><AntDesign name="camera" size={30} color={colors.primary} /></Pressable>)
-                        :
-                        (<Image
-                        style={styles.image}
-                        source={{uri: pickedUrl}} 
-                        />)
-                    }
-                </View>
-                <View>
-                    <Pressable onPress={handlerTakeImage}><MaterialCommunityIcons name="pencil" size={24} color={colors.button} /></Pressable>  
-                </View>
+            <View style={styles.preview}>
+                {   !pickedUrl
+                    ?
+                    (<Pressable onPress={handlerTakeImage}><AntDesign name="camera" size={30} color={colors.primary} /></Pressable>)
+                    :
+                    (<Image style={styles.image} source={{uri: image}}/>)
+                }
             </View>
-            <View style={styles.containerText}>
-                <Text>Nombre</Text>
-                <Text>Email</Text>
+            <View>
+                <Pressable onPress={handlerTakeImage}><MaterialCommunityIcons name="pencil" size={24} color={colors.button} /></Pressable>  
             </View>
-            
         </View>
     );
 }

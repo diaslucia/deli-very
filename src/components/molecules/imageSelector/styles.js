@@ -3,17 +3,11 @@ import { colors, fontSize, padding, margin } from "../../../constants//theme";
 
 const styles = StyleSheet.create({
     container: {
-        justifyContent: "flex-start",
-        flexDirection: "row",
-        alignItems: "center",
-        paddingVertical: padding.large,
-        backgroundColor: colors.primaryBackground,
-    },
-    containerImg:{
-        justifyContent: "flex-start",
+        justifyContent: "center",
         flexDirection: "row",
         alignItems: "flex-end",
-        marginHorizontal: margin.medium,
+        paddingVertical: padding.large,
+        backgroundColor: colors.primaryBackground,
     },
     preview: {
       width: 150,
@@ -33,13 +27,6 @@ const styles = StyleSheet.create({
       borderWidth: 1,
       borderRadius: 100,
     },
-    text: {
-      color: colors.strongSecondary,
-      fontSize: fontSize.text,
-    },
-    containerText:{
-        marginHorizontal: margin.small,
-    }
 })
 
 export default styles;

@@ -9,7 +9,7 @@ import IonicIcons from "react-native-vector-icons/Ionicons";
 
 const OrderItem = ({ data, onDelete }) => {
     const { date, id, total, address } = data;
-
+    
     const formatDate = (time) => {
         const date = new Date(time);
         return date.toLocaleDateString();
