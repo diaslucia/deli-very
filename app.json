@@ -3,11 +3,12 @@
     "name": "Deli.Very",
     "slug": "deli-very",
     "version": "1.0.0",
+    "platforms": ["ios","android"],
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
       "image": "./assets/splash.png",
-      "resizeMode": "contain",
+      "resizeMode": "cover",
       "backgroundColor": "#ffffff"
     },
     "updates": {
@@ -17,12 +18,26 @@
       "**/*"
     ],
     "ios": {
+      "bundleIdentifier": "com.luciadias.deli",
+      "buildNumber": "1.0.0",
       "supportsTablet": true
     },
     "android": {
+      "package": "com.luciadias.deli",
+      "versionCode": 1,
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
+      },
+      "permissions": [
+        "CAMERA",
+        "ACCESS_FINE_LOCATION",
+        "WRITE_EXTERNAL_STORAGE"
+      ],
+      "config": {
+        "googleMaps": {
+          "apiKey": "AIzaSyDxCIR-wz8ZPQv9QBQhqaj1l3TznDioV6Q"
+        }
       }
     },
     "web": {
