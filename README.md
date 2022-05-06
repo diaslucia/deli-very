@@ -1,20 +1,12 @@
-# Mobile App 🎮
- 
-## Project status 🚧
-
-On progress...
+# Deli•Very 🍴
 
 ## Tecnologies 🛠️
 
 List of tecnologies used for this project:
 
-- [Node JS](https://nodejs.org/en/): Version 16.14.0
+- [React Native](https://reactnative.dev/)
 
-- [React](https://es.reactjs.org/): Version 17.0.1
-
-- [React Native](https://reactnative.dev/): Version 0.64.3
-
-- [React Expo](https://expo.dev/): Version 44.0.0
+- [React Expo](https://expo.dev/)
 
 ## Instalation & Ejecution 🚀
 
@@ -25,7 +17,7 @@ Steps to install and run the project:
 1. Install Node JS from https://nodejs.org/en/
 2. Clone the project
 ```
-$git clone https://github.com/diaslucia/juegomovil.git
+$git clone https://github.com/diaslucia/appmovil.git
 ```
 3. Open the console in your code editor and change the directory to the one in your current project
 ```
