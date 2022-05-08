@@ -25,6 +25,7 @@ const styles = StyleSheet.create({
         color: colors.primaryText,
     },
     totalPrice: {
+        fontFamily: fontFamily.main,
         fontSize: fontSize.text,
         padding: padding.small,
         color: colors.primaryText,

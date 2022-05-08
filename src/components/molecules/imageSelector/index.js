@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { View, Pressable, Image, Text, Alert } from "react-native";
+import React, { useState, useEffect } from "react";
+import { View, Pressable, Image, Alert } from "react-native";
 
 /* Styles */
 import styles from "./styles";
@@ -11,10 +11,15 @@ import * as Permissions from "expo-permissions";
 
 /* Icons */
 import { AntDesign } from '@expo/vector-icons';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 const ImageSelector = (props) => {
     const [pickedUrl, setPickedUrl] = useState();
+
+    useEffect(() => {
+        if(props.img) {
+            setPickedUrl(props.img);
+        }
+    }, [props.img]);
 
     const verifyPermissions = async () => {
         const { status } = await Permissions.askAsync(Permissions.CAMERA);
@@ -49,11 +54,8 @@ const ImageSelector = (props) => {
                     ?
                     (<Pressable onPress={handlerTakeImage}><AntDesign name="camera" size={30} color={colors.primary} /></Pressable>)
                     :
-                    (<Image style={styles.image} source={{uri: image}}/>)
+                    (<Pressable onPress={handlerTakeImage}><Image style={styles.image} source={{uri: pickedUrl}}/></Pressable>)
                 }
-            </View>
-            <View>
-                <Pressable onPress={handlerTakeImage}><MaterialCommunityIcons name="pencil" size={24} color={colors.button} /></Pressable>  
             </View>
         </View>
     );

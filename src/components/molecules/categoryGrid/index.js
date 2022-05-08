@@ -1,5 +1,7 @@
 import React from "react";
 import { View, Text, TouchableNativeFeedback, Platform, TouchableOpacity, ImageBackground  } from "react-native";
+
+/* Styles */
 import styles from "./styles";
 
 const CategoryGrid = ({ item, onSelected }) => {

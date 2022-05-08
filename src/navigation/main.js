@@ -2,7 +2,7 @@ import React from "react";
 import { Platform } from "react-native";
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-/* Styles */
+/* Theme */
 import { colors } from "../constants/theme";
 
 /* Icons */

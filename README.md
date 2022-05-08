@@ -59,11 +59,15 @@ $npm install @react-navigation/bottom-tabs
 ```
 $npm install --save react-native-vector-icons
 ```
-14. Ejecute the app (Ctrl + C to stop server)
+14. AsyncStorage
+```
+$npx expo install @react-native-async-storage/async-storage
+```
+15. Ejecute the app (Ctrl + C to stop server)
 ```
 $npm start
 ```
-15. Install Expo Go App in your cellphone and scan the QR to visualice your project
+16. Install Expo Go App in your cellphone and scan the QR to visualice your project
 
 
 

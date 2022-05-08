@@ -2,8 +2,10 @@ import React from "react";
 import { Platform } from "react-native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
+/* Theme */
 import { colors, fontFamily, fontSize } from "../constants/theme";
 
+/* Components */
 import Cart from "../screens/cart/index";
 
 const Stack = createNativeStackNavigator();

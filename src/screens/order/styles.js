@@ -15,6 +15,30 @@ const styles = StyleSheet.create({
         marginHorizontal: margin.small,
         textTransform: "uppercase",
     },
+    profileContainer: {
+        backgroundColor: colors.primaryBackground,
+        flexDirection: "column",
+        justifyContent: "center",
+        alignContent: "center",
+    },
+    profileTitle:{
+        textAlign: "center",
+        fontFamily: fontFamily.main,
+        fontSize: fontSize.text,
+        color: colors.secondaryTitle,
+        marginTop: margin.small,
+        textTransform: "uppercase",
+    },
+    profileText: {
+        textAlign: "center",
+        fontFamily: fontFamily.main,
+        color: colors.primaryText,
+        marginBottom: margin.small,
+    },
+    profileInnerContainer: {
+        marginHorizontal: margin.large,
+        marginVertical: margin.small,
+    }
 });
 
 export default styles;

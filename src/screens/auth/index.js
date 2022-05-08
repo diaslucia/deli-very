@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-import { View, Text, TouchableOpacity, Button,ImageBackground } from "react-native";
+import { View, Text, TouchableOpacity, Button, ImageBackground } from "react-native";
 
 /* Styles */
 import styles from "./styles";
