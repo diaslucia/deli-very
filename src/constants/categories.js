@@ -16,7 +16,7 @@ export const CATEGORIES = [
     },
     {
         id: 4,
-        name: "Bebidas",
+        name: "Exprimidos",
         img: "https://cdn0.bodas.net/article-vendor/12352/3_2/960/jpg/cocteleria_1_112352-157547067827828.jpeg",
     },
 ]
