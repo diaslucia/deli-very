@@ -1,5 +1,9 @@
 # Deli•Very 🍴
 
+## Website Deploy 🏁
+
+![Deli-very](https://user-images.githubusercontent.com/88150989/172034226-aa2d0856-beeb-48b9-9d4a-985e88020374.gif)
+
 ## Tecnologies 🛠️
 
 List of tecnologies used for this project:
@@ -27,49 +31,44 @@ $cd yourProjectDirectory
 ```
 $npm install -g expo-cli
 ```
-6. Install Expo Fonts
-```
-$npm install expo-font
-```
-7. Install Expo Navigation
-```
-$npm install @react-navigation/native
-```
-8. Install screens and safe-area-context libraries
-```
-$expo install react-native-screens react-native-safe-area-context
-```
-9. Install navigation stack
-```
-$npm install @react-navigation/native-stack
-```
-10. Install React Redux
-```
-$npm install redux react-redux
-```
-11. Install Redux Thunk
-```
-$npm i redux-thunk
-```
-12. Install Bottom Tabs
-```
-$npm install @react-navigation/bottom-tabs
-```
-13. Iconos vector
-```
-$npm install --save react-native-vector-icons
-```
-14. AsyncStorage
-```
-$npx expo install @react-native-async-storage/async-storage
-```
-15. Ejecute the app (Ctrl + C to stop server)
+5. Ejecute the app (Ctrl + C to stop server)
 ```
 $npm start
 ```
 16. Install Expo Go App in your cellphone and scan the QR to visualice your project
 
+## Libraries 📚
 
+# Expo Fonts
+```
+$npm install expo-font
+```
+# Expo Navigation
+```
+$npm install @react-navigation/native
+$expo install react-native-screens react-native-safe-area-context
+```
+# Navigation stack
+```
+$npm install @react-navigation/native-stack
+```
+# React Redux & Thunk
+```
+$npm install redux react-redux
+$npm i redux-thunk
+```
+# Bottom Tabs
+```
+$npm install @react-navigation/bottom-tabs
+```
+# Iconos vector
+```
+$npm install --save react-native-vector-icons
+```
+# AsyncStorage
+```
+$npx expo install @react-native-async-storage/async-storage
+```
 
 
 
